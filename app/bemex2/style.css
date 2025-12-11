@@ -1,0 +1,80 @@
+:root {
+  --basecol1: 3;
+  --basecol2: 123;
+  --basecol3: 220;
+
+  /* base1 (rødish) */
+  --col1: hsl(var(--basecol1), 45%, 50%, 100%);
+  --col1-light: hsla(var(--basecol1), 45%, 75%, 100%);
+  --col1-dark: hsla(var(--basecol1), 45%, 35%, 100%);
+
+  /* base2 (grønish) */
+  --col2: hsla(var(--basecol2), 45%, 50%, 100%);
+  --col2-light: hsla(var(--basecol2), 45%, 75%, 100%);
+  --col2-dark: hsla(var(--basecol2), 45%, 35%, 100%);
+
+  /*base3 (blåish) */
+  --col3: hsla(var(--basecol3), 45%, 50%, 100%);
+  --col3-light: hsla(var(--basecol3), 45%, 75%, 100%);
+  --col3-dark: hsla(var(--basecol3), 45%, 35%, 100%);
+
+  --colwhite: hsl(0, 20%, 90%);
+  --colblack: hsl(0, 5%, 10%);
+}
+
+main {
+  font-family: "fira-sans-2", sans-serif;
+  font-size: 28px;
+  background-color: var(--colblack);
+  letter-spacing: 0.8px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  background-color: var(--col3-light);
+  text-transform: uppercase;
+}
+
+.nav__brand {
+  color: #888;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  text-align: center;
+}
+
+.nav__item {
+  width: fit-content;
+  margin: 0.2em;
+  padding: 1em;
+  background-color: var(--col1);
+  border: 6px solid var(--col1-dark);
+  border-radius: 5px;
+  transition: 0.9s background ease, 0.9s border-color ease;
+  cursor: pointer;
+}
+
+.nav__item:hover {
+  background-color: var(--col3);
+  border-color: var(--col3-dark);
+}
+
+.nav__item--active {
+  background-color: var(--col2);
+  border-color: var(--col2-dark);
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--colwhite);
+}
+
+.nav__link--active {
+  font-weight: bold;
+}
